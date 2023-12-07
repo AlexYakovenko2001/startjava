@@ -3,36 +3,36 @@ public class IfElseStatementTheme {
         System.out.println("1. Перевод псевдокода на язык Java");
         boolean isMen = true;
         if (!isMen) {
-            System.out.println("Вы женщина.");
+            System.out.print("Вы женщина. ");
         } else {
-            System.out.println("Вы мужчина.");
+            System.out.print("Вы мужчина. ");
         }
 
         int age = 31;
         if (age > 18) {
-            System.out.println("Вам больше 18 лет.");
+            System.out.print("Вам больше 18 лет. ");
         } else {
-            System.out.println("Вам не больше 18 лет.");
+            System.out.print("Вам не больше 18 лет. ");
         }
 
         float growth = 1.7f;
         if (growth < 1.8) {
-            System.out.println("Вам не слишком повезло с ростом.");
+            System.out.print("Ваш рост меньше 1.8м. ");
         } else {
-            System.out.println("Вам повезло с ростом чуточку больше, чем тем, кто ниже вас.");
+            System.out.print("Ваш рост больше 1.8м. ");
         }
 
-        String name = "Alex";
+        String name = "Mario";
         char firstLetterOfName = name.charAt(0);
         if (firstLetterOfName == 'M') {
-            System.out.println("Ваше имя начинается на букву 'M'");
+            System.out.print("Ваше имя начинается на букву 'M'");
         } else if (firstLetterOfName == 'I') {
-            System.out.println("Ваше имя начинается на букву 'I'");
+            System.out.print("Ваше имя начинается на букву 'I'");
         } else {
-            System.out.println("Ваше имя точно не начинается на буквы 'M' или 'I'");
+            System.out.print("Ваше имя точно не начинается на буквы 'M' или 'I'");
         }
 
-        System.out.println("\n2. Поиск большего числа");
+        System.out.println("\n\n2. Поиск большего числа");
         int randomNumb1 = 12;
         int randomNumb2 = 10;
         if (randomNumb1 > randomNumb2) {
@@ -60,7 +60,27 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n4. Поиск одинаковых цифр в числах");
-          
+        int number1 = 123;
+        int number2 = 223;
+        boolean isEqualHundreds = (number1 / 100) == (number2 / 100);
+        boolean isEqualTens = (number1 / 10) % 10 == (number2 / 10) % 10;
+        boolean isEqualOnes = number1 % 10 == number2 % 10;
+    
+        if (!isEqualHundreds && !isEqualTens && !isEqualOnes) {
+            System.out.println("В данных числах нет одинаковых цифр");
+        } else {
+            System.out.println("Числа " + number1 + " и " + number2 + " равны в разрядах: ");
+            if (isEqualHundreds) {
+                System.out.println("1: " + number1 / 100);
+            }
+            if (isEqualTens) {
+                System.out.println("2: " + number1 / 10 % 10);
+            }
+            if (isEqualOnes) {
+                System.out.println("3: " + number1 % 10);
+            }
+        }
+
         System.out.println("\n5. Определение символа по его коду");
         char symbol = '\u0031';
         if (symbol >= 'A' && symbol <= 'Z') {

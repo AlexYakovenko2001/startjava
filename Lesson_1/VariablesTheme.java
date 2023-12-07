@@ -39,16 +39,16 @@ public class VariablesTheme {
 
         System.out.println();
         System.out.println("4. Вывод min и max значений целых числовых типов");
-        byte num1 = 127;
+        byte num1 = Byte.MAX_VALUE;
         System.out.println("Значение для переменной типа byte: " + num1 + ", " + num1++ + ", " + num1-- + ";");
 
-        short num2 = 32767;
+        short num2 = Short.MAX_VALUE;
         System.out.println("Значение для переменной типа short: " + num2 + ", " + num2++ + ", " + num2-- + ";");
 
-        int num3 = 2147483647;
+        int num3 = Integer.MAX_VALUE;
         System.out.println("Значение для переменной типа int: " + num3 + ", " + num3++ + ", " + num3-- + ";");
 
-        long num4 = 9_223_372_036_854_775_807L;
+        long num4 = Long.MAX_VALUE;
          System.out.println("Значение для переменной типа long: " + num4 + ", " + num4++ + ", " + num4-- + ";");
 
         System.out.println();
