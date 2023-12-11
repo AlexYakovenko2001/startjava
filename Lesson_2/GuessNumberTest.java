@@ -7,18 +7,16 @@ public  class GuessNumberTest {
         boolean isRepeat = true;
         boolean needToContinue = false;
         while (isRepeat) {
-            //сканеры для имён игроков
-            Scanner namePlayer1 = new Scanner(System.in);
-            Scanner namePlayer2 = new Scanner(System.in);
-            
+            Scanner scanner = new Scanner(System.in);
+
             //имя 1 игрока в класс Player закидываю
-            System.out.println("Введите имя игрока №1: ");
-            String firstPlayer = namePlayer1.nextLine();
+            System.out.print("Введите имя игрока №1: ");
+            String firstPlayer = scanner.next();
             Player player1 = new Player(firstPlayer);
             
             //имя 2 игрока в класс Player закидываю
-            System.out.println("Введите имя игрока №2: ");
-            String secondPlayer = namePlayer2.nextLine();
+            System.out.print("Введите имя игрока №2: ");
+            String secondPlayer = scanner.next();
             Player player2 = new Player(secondPlayer);
 
             //передача имён игроков в класс GuessNumber
@@ -33,18 +31,16 @@ public  class GuessNumberTest {
             //цикл для повтора ввода чисел
             while (!needToContinue) {
                  //считывание введённого числа
-                Scanner enteredNumber = new Scanner(System.in);
-                System.out.println("Введите число: ");
-                gameGuessNumber.setEnteredNumber(enteredNumber.nextInt());
+                System.out.print("Введите число: ");
+                gameGuessNumber.setEnteredNumber(scanner.nextInt());
                  //запускаю игру
                 needToContinue =  gameGuessNumber.getResult();
             }
 
             //проверка на необходимость продолжения
-            Scanner userAnswer = new Scanner(System.in);
             while (needToContinue) {
-                System.out.println("Хотите продолжить игру? [yes/no]: ");
-                String answer = userAnswer.nextLine();
+                System.out.print("Хотите продолжить игру? [yes/no]: ");
+                String answer = scanner.next();
                 if (answer.equals("yes")) {
                     break;
                 } 

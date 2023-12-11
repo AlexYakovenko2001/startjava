@@ -3,28 +3,26 @@ import java.util.Scanner;
 public class CalculatorTest {
     public static void main(String[] args) {
         boolean isRepeat = true;
+        System.out.println("Калькулятор запущен");
         while (isRepeat) {
-            Scanner valueFirstNumb = new Scanner(System.in);
-            Scanner valueSecondNumb = new Scanner(System.in);
-            Scanner valueSign = new Scanner(System.in);
-            Scanner userAnswer = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);
 
             Calculator operation1 = new Calculator();
 
-            System.out.println("Введите первое число: ");
-            operation1.setNumber1(valueFirstNumb.nextInt());
+            System.out.print("Введите первое число: ");
+            operation1.setNumber1(scanner.nextInt());
 
-            System.out.println("Введите знак математической операции: ");
-            operation1.setSign(valueSign.next());
+            System.out.print("Введите знак математической операции: ");
+            operation1.setSign(scanner.next().charAt(0));
 
-            System.out.println("Введите второе число: ");
-            operation1.setNumber2(valueSecondNumb.nextInt());
+            System.out.print("Введите второе число: ");
+            operation1.setNumber2(scanner.nextInt());
 
             operation1.calculate();
 
             while (true) {
                 System.out.println("Хотите продолжить вычисления? [yes/no]: ");
-                String answer = userAnswer.nextLine();
+                String answer = scanner.next();
                 if (answer.equals("yes")) {
                     break;
                 } 
